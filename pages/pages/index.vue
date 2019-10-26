@@ -2,36 +2,36 @@
 	<v-container fluid>
       <v-row dense>
         <v-col         
-		  v-for="(post, index) in posts" :key="index"
+		  v-for="(page, index) in pages" :key="index"
         >
 
   <v-card
     class="mx-auto"
     max-width="400"
   >
-  <nuxt-link :to="{ path: post.slug }">
+  <nuxt-link :to="{ path: page.slug }">
     <!-- <v-img
       class="grey--text align-end"
       height="200px"
-      :src="post.img_url"
+      :src="page.img_url"
     >
-	{{post.feature_image }}
-      <v-card-title>{{ post.title }}</v-card-title>
+	{{page.feature_image }}
+      <v-card-title>{{ page.title }}</v-card-title>
     </v-img> -->
 
 	<img 
 		class="align-end"
       	height="200px"	
-		:src="post.feature_image" 
+		:src="page.feature_image" 
 		/>
 
 	
 
-    <v-card-title class="grey--text pb-0">{{ post.title }}</v-card-title>
+    <v-card-title class="grey--text pb-0">{{ page.title }}</v-card-title>
 	</nuxt-link>
 
     <v-card-text class="text--primary">
-      <div>{{ post.excerpt }}</div>
+      <div>{{ page.excerpt }}</div>
     </v-card-text>
 
     <v-card-actions>
@@ -56,7 +56,7 @@
 
 <!-- <div class="text-center">
     <v-pagination
-      v-model="post"
+      v-model="page"
       :length="6"
     ></v-pagination>
 
@@ -67,12 +67,12 @@
 </template>
 
 <script>
-  import { getPosts } from '../api/posts'
+  import { getPages } from '../../api/pages'
 
   export default {
     async asyncData () {
-      const posts = await getPosts();
-      return { posts: posts }
+      const pages = await getPages();
+      return { pages: pages }
     }
   }
 </script>

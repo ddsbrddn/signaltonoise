@@ -7,23 +7,33 @@ const api = new GhostContentAPI({
   version: "v2"
 });
 
-//Getting pages
-export async function getPages() {
-  return await api.pages
+
+
+export async function getTags() {
+  return await api.tags
     .browse({
+	//   include: "tags, authors, feature_image",
+	//   fields: postIndexFields,
       limit: "all"
+	})
+	
+	// .then((posts) => {
+	// 	posts.forEach((post) => {
+	// 		console.log(post.title)
+	// 	})
+	// })
+    .catch(err => {
+      console.error(err);
+    });
+}
+
+export async function getSingleTag(tagSlug) {
+  return await api.tags
+    .read({
+      slug: tagSlug
     })
     .catch(err => {
       console.error(err);
     });
 }
 
-export async function getSinglePage(pageSlug) {
-  return await api.pages
-    .read({
-      slug: pageSlug
-    })
-    .catch(err => {
-      console.error(err);
-    });
-}

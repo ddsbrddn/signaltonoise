@@ -61,5 +61,22 @@ export async function getAuthor(authorSlug) {
     });
 }
 
+export async function getTags() {
+  return await api.posts
+    .browse({
+	//   include: "tags, authors, feature_image",
+	//   fields: postIndexFields,
+      limit: "all"
+	})
+	
+	// .then((posts) => {
+	// 	posts.forEach((post) => {
+	// 		console.log(post.title)
+	// 	})
+	// })
+    .catch(err => {
+      console.error(err);
+    });
+}
 
 
