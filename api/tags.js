@@ -16,7 +16,7 @@ export async function getTags() {
 	//   fields: postIndexFields,
       limit: "all"
 	})
-	
+
 	// .then((posts) => {
 	// 	posts.forEach((post) => {
 	// 		console.log(post.title)

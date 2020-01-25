@@ -5,7 +5,8 @@
     <h1>{{ page.title }}</h1>
 	<article>
 		<section class="page-content">
-			{{ page.content }}
+      {{ page.content }}
+			
 			</section>
 			</article>
     </div>
@@ -13,7 +14,7 @@
 </v-container>
 </template>
 
-<script>	
+<script>
   import { getSinglePage } from '../../api/pages';
 
   export default {

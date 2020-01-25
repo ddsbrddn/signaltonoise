@@ -3,13 +3,12 @@
   <div>
 	  <img :src="post" />
     <h1>{{ post.title }}</h1>
-	<h3>{{ post.excerpt }}</h3>
-    
+    <div v-html="post.html"/>
   </div>
 </v-container>
 </template>
 
-<script>	
+<script>
   import { getSinglePost } from '../api/posts';
 
   export default {

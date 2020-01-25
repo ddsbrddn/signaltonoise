@@ -17,22 +17,22 @@ const postIndexFields = [
   'published_at',
   'html',
   'excerpt'
-]
+];
 
-const postsPerPage = 8
+const postsPerPage = 8;
 
 export async function getPosts() {
   return await api.posts
     .browse({
-	  include: "tags, authors, feature_image",
 	//   fields: postIndexFields,
-      limit: "all"
+      limit: "10",
+      include: "tags, authors, feature_image",
 	})
-	
+
 	// .then((posts) => {
 	// 	posts.forEach((post) => {
-	// 		console.log(post.title)
-	// 	})
+	// 		console.log(post.title);
+	// 	});
 	// })
     .catch(err => {
       console.error(err);
@@ -68,7 +68,7 @@ export async function getTags() {
 	//   fields: postIndexFields,
       limit: "all"
 	})
-	
+
 	// .then((posts) => {
 	// 	posts.forEach((post) => {
 	// 		console.log(post.title)

@@ -1,6 +1,7 @@
-import colors from 'vuetify/es5/util/colors'
-import GhostContentAPI from '@tryghost/content-api'
-import GhostAdminAPI from '@tryghost/admin-api'
+// import colors from 'vuetify/es5/util/colors'
+import GhostContentAPI from '@tryghost/content-api';
+import GhostAdminAPI from '@tryghost/admin-api';
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 
 export default {
   mode: 'universal',
@@ -39,7 +40,8 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    // '@nuxtjs/vuetify',
+    '@nuxtjs/router'
   ],
   /*
    ** Nuxt.js modules
@@ -47,7 +49,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    'bootstrap-vue/nuxt'
   ],
   /*
    ** Axios module configuration
@@ -58,28 +61,28 @@ export default {
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
    */
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-    //   dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-		},
-		light: {
-			primary: colors.red.darken1, // #E53935
-			secondary: colors.red.lighten4, // #FFCDD2
-			accent: colors.indigo.base, // #3F51B5
-		},
-      }
-    }
-  },
+  // vuetify: {
+  //   customVariables: ['~/assets/variables.scss'],
+  //   theme: {
+  //   //   dark: true,
+  //     themes: {
+  //       dark: {
+  //         primary: colors.blue.darken2,
+  //         accent: colors.grey.darken3,
+  //         secondary: colors.amber.darken3,
+  //         info: colors.teal.lighten1,
+  //         warning: colors.amber.base,
+  //         error: colors.deepOrange.accent4,
+  //         success: colors.green.accent3
+	// 	},
+	// 	light: {
+	// 		primary: colors.red.darken1, // #E53935
+	// 		secondary: colors.red.lighten4, // #FFCDD2
+	// 		accent: colors.indigo.base, // #3F51B5
+	// 	},
+  //     }
+  //   }
+  // },
   /*
    ** Build configuration
    */
